@@ -22,9 +22,10 @@ def bh(p):
     for rank,i in zip(range(m,0,-1),o[::-1]): prev=min(prev,p[i]*m/rank); q[i]=prev
     return q
 D={}
-for f in sorted(glob.glob(DIR+'/'+'*nightlights_*.csv')):
+for f in sorted(glob.glob(DIR+'/*nightlights_*.csv')):
     n=f.split('nightlights_')[1][:-4]; d=pd.read_csv(f); d['date']=pd.to_datetime(d['date']); D[n]=d.set_index('date')['mean']
 df=pd.DataFrame(D)
+df=df[df.index<'2026-01-01']   # same end year (2025) as the NDVI and POWER data
 def run(sub,label):
     rows=[]
     for c in sub.columns:

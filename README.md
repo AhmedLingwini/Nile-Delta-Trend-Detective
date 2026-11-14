@@ -20,7 +20,7 @@ Is the Nile Delta getting greener, and can we trust the trend? We analyse 25 yea
 |---|---|
 | NDVI | NASA Terra MODIS monthly vegetation indices (MOD13C2 / MOD13A3), 2001–2025, aggregated to a 0.1° grid |
 | Temperature (T2M), precipitation (PRECTOTCORR) | NASA POWER monthly point data (MERRA-2 reanalysis, about 50 km), 5 points, 2001–2025 |
-| Night lights | Suomi NPP VIIRS, downloaded from Google Earth Engine (add the exact collection ID here), monthly 2012–2026, 5 cities |
+| Night lights | Suomi NPP VIIRS, downloaded from Google Earth Engine (add the exact collection ID here), monthly 2012–2025 (the files also contain 2026 months, excluded to match the NDVI and POWER period), 5 cities |
 
 POWER values come from a reanalysis model, not from weather stations.
 
