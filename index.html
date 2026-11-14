@@ -71,7 +71,7 @@ footer{margin-top:40px;font-size:13px;color:var(--mut)}
   <svg id="map" viewBox="0 0 280 180" role="img" aria-label="خريطة اتجاه NDVI لكل خلية في دلتا النيل"></svg>
   <div class="bar"></div>
   <div class="scale"><span>نقص 0.01 في السنة</span><span>صفر</span><span>زيادة 0.01 في السنة</span></div>
-  <div class="scale" style="margin-top:4px"><span>المربع الرمادي = ثقة أقل من المختار</span></div>
+  <div class="scale" style="margin-top:4px"><span>المربع الرمادي = ثقة أقل من المختار، والنقط السودا = المدن الخمس</span></div>
  </div>
  <div class="panel" aria-live="polite">
   <div class="seg" id="cases"></div>
@@ -204,12 +204,14 @@ function col(s){const m=0.0098,t=Math.max(-1,Math.min(1,s/m));
  const B=[140,81,10],MB=[216,179,101],W=[245,245,245],MG=[90,180,172],G=[1,102,94];
  let c=t<0?(t<-.5?mix(B,MB,(t+1)*2):mix(MB,W,(t+.5)*2)):(t<.5?mix(W,MG,t*2):mix(MG,G,(t-.5)*2));
  return 'rgb('+c.join()+')'}
+const PIN=[['الإسكندرية',29.92,31.20,'middle'],['المنصورة',31.38,31.04,'middle'],['دمياط',31.82,31.42,'middle'],['القاهرة',31.24,30.04,'middle'],['الإسماعيلية',32.27,30.59,'end']];
+const PINS=PIN.map(p=>{const x=(p[1]-29.6)*100,y=(31.6-p[2])*100,e=p[3]==='end';return '<g pointer-events="none"><circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="2.2" fill="var(--ink)" stroke="var(--bg)" stroke-width="1"/><text x="'+(e?x-4:x).toFixed(1)+'" y="'+(e?y+2:y-4).toFixed(1)+'" text-anchor="'+p[3]+'" font-size="6" font-weight="700" fill="var(--ink)" stroke="var(--bg)" stroke-width="2" paint-order="stroke">'+p[0]+'</text></g>'}).join('');
 function draw(){
  svg.innerHTML=CELLS.map(c=>{
   const x=((c[1]-29.6)*100).toFixed(1),y=((31.6-c[2])*100).toFixed(1);
   const show=ORDER[c[6]]>=ORDER[filt];
   const hl=CASES[c[0]]?' stroke="var(--ink)" stroke-width="1.2"':(sel===c[0]?' stroke="var(--ink)" stroke-width="1.2"':'');
-  return '<rect class="cell" data-id="'+c[0]+'" x="'+x+'" y="'+y+'" width="9.6" height="9.6" fill="'+(show?col(c[3]):'var(--grey)')+'" opacity="'+(show?1:.45)+'"'+hl+'/>'}).join('');
+  return '<rect class="cell" data-id="'+c[0]+'" x="'+x+'" y="'+y+'" width="9.6" height="9.6" fill="'+(show?col(c[3]):'var(--grey)')+'" opacity="'+(show?1:.45)+'"'+hl+'/>'}).join('')+PINS;
 }
 function show(id){
  sel=id;const c=CELLS.find(r=>r[0]===id);if(!c)return;
