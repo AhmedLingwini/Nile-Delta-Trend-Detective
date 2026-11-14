@@ -55,7 +55,7 @@ footer{margin-top:40px;font-size:13px;color:var(--mut)}
 <div class="panel" style="margin-top:14px"><p style="margin:0">الدلتا بتخضر في المتوسط (+0.009 في NDVI كل عقد)، لكن حوالين أربع مدن من خمسة الخضرة بتقل، والإسماعيلية بتخضر. الحرارة بتزيد في النقط الخمسة (من +0.29 لـ +0.43 درجة كل عقد). والإضاءة الليلية ما زادتش في أي مدينة (قلّت معنوياً في القاهرة بس)، فمقدرناش نأكد قصة الزحف العمراني.</p></div>
 <details style="margin-top:12px" class="panel" lang="en" dir="ltr"><summary style="cursor:pointer;font-weight:600">English summary</summary>
 <p style="margin-top:10px"><b>Question.</b> Is the Nile Delta getting greener, and can we trust the trends? We analysed 25 years (2001–2025) of Terra MODIS NDVI for 468 grid cells (0.1°, about 10 km), plus NASA POWER climate at 5 points and Suomi NPP VIIRS night lights for 5 cities.</p>
-<p><b>Findings.</b> Regional NDVI rose from 0.309 to 0.339 (Mann-Kendall p ≈ 5.6e-07), and 382 of 468 cells keep a significant trend after autocorrelation correction and FDR (206 greening, 172 browning). Around four of five cities (Alexandria, Mansoura, Damietta, Cairo) NDVI declines within 15 km; around Ismailia it rises. Temperature rises at all five points (+0.29 to +0.43 °C per decade); rainfall is significant after FDR only at Ismailia. Night lights did not rise in any city (a significant decline only in Cairo), so they do not confirm an urban-sprawl explanation.</p>
+<p><b>Findings.</b> Regional NDVI rose from 0.309 to 0.339 (Mann-Kendall p ≈ 5.6e-07), and 382 of 468 cells keep a significant trend after autocorrelation correction and FDR (204 greening, 178 browning). Around four of five cities (Alexandria, Mansoura, Damietta, Cairo) NDVI declines within 15 km; around Ismailia it rises. Temperature rises at all five points (+0.29 to +0.43 °C per decade); rainfall is significant after FDR only at Ismailia. Night lights did not rise in any city (a significant decline only in Cairo), so they do not confirm an urban-sprawl explanation.</p>
 <p><b>Method.</b> Seasonality removed, Theil–Sen slope, Mann–Kendall test, autocorrelation correction, Benjamini–Hochberg FDR, a three-level confidence score per cell, and a visual check with before/after imagery.</p>
 <p><b>Limits.</b> Cells are about 10 km and mix land cover; climate comes from 5 points of a reanalysis model (MERRA-2); 25 years is short; significant trends do not show causes. Code: <a href="https://github.com/ahmedmohamed2008117-ship-it/Nile-Delta-Trend-Detective" rel="noopener" style="color:var(--acc)">GitHub</a>.</p></details>
 
@@ -82,9 +82,9 @@ footer{margin-top:40px;font-size:13px;color:var(--mut)}
 <h2>النتيجة الإقليمية</h2>
 <div class="stats">
  <div class="stat"><b>0.309 ← 0.339</b><span>متوسط NDVI للدلتا (2001 ← 2025)</span></div>
- <div class="stat"><b>+0.00092 في السنة</b><span>معدل التغير، معنوي (Mann-Kendall: p = 5.6 × 10⁻⁷)</span></div>
+ <div class="stat"><b>+0.00092 في السنة</b><span>معدل التغير (انحدار خطي)، ومعنوي بـ Mann-Kendall (p = 5.6 × 10⁻⁷)</span></div>
  <div class="stat"><b>382 من 468</b><span>خلية فضل ترندها معنوي بعد كل التصحيحات</span></div>
- <div class="stat"><b>206 / 172 / 90</b><span>خلايا بتخضر / بتبهت / من غير ترند معنوي</span></div>
+ <div class="stat"><b>204 / 178 / 86</b><span>خلايا بتخضر / بتبهت / من غير ترند معنوي بعد كل التصحيحات</span></div>
 </div>
 <div class="panel" style="margin-top:14px"><b>متوسط NDVI السنوي للدلتا (2001–2025)</b><svg id="cR" viewBox="0 0 520 220" role="img" aria-label="متوسط NDVI السنوي للدلتا بيزيد من 0.309 لـ 0.339"></svg></div>
 <p style="margin-top:14px">يعني الدلتا في المتوسط بتخضر، لكن القصة مش متجانسة: الأخضر الغامق في الغرب والجنوب الغربي، والبني في أماكن متفرقة، وأوضح مثال عليه قرب الساحل الشمالي الشرقي.</p>

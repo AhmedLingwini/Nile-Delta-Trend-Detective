@@ -8,7 +8,7 @@ Is the Nile Delta getting greener, and can we trust the trend? We analyse 25 yea
 ## Main findings / أهم النتايج
 
 - Regional mean NDVI rose from 0.309 (2001) to 0.339 (2025); Mann-Kendall p ≈ 5.6e-07.
-- 382 of 468 cells keep a significant trend after autocorrelation correction and FDR: 206 greening, 172 browning (high-confidence: 202 greening, 165 browning).
+- 382 of 468 cells keep a significant trend after autocorrelation correction and FDR: 204 greening, 178 browning (of these, high confidence: 202 greening, 165 browning).
 - Near four of five cities (Alexandria, Mansoura, Damietta, Cairo) NDVI declines within 15 km; near Ismailia it rises.
 - Temperature rises at all five POWER points (+0.29 to +0.43 °C per decade, significant after FDR). Rainfall is significant after FDR only at Ismailia.
 - Night lights do not rise in any city (a significant decline only in Cairo), so they do not confirm an urban-sprawl story.
